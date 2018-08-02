@@ -1,0 +1,33 @@
+<div class="col-md-offset-4 col-md-4">
+    <h3 class="col-md-12 text-center">Add/Edit Contact</h3>
+    <form ng-submit="$ctrl.addUpdateContact($ctrl.contact)">
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text" class="form-control" ng-model="$ctrl.contact.fname" id="fname" placeholder="Enter First Name" name="fname">
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name:</label>
+            <input type="text" class="form-control" ng-model="$ctrl.contact.lname" id="lname" placeholder="Enter Last Name" name="lname">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control"
+                   ng-keydown="$ctrl.validateMail($event);" 
+                   ng-paste="$ctrl.validateMail($event);" 
+                   ng-model="$ctrl.contact.email"
+                   ng-class="{'error':$ctrl.isEmailValid}"
+                   id="email" placeholder="Enter Email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile:</label> 
+            <input type="number" 
+                   ng-keyup="$ctrl.validateMobile($event);" class="form-control" 
+                   ng-model="$ctrl.contact.mobile" 
+                   ng-class="{'error':$ctrl.isMobileValid}"
+                   id="mobile" placeholder="Enter Mobile" name="mobile">
+        </div>
+        <!--<button type="submit" class="btn btn-primary" ng-click="$ctrl.addUpdateContact($ctrl.contact)">Submit</button>-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default pull-right" ng-click="$ctrl.cancelAddEdit()">Cancel</button>
+    </form>
+</div>

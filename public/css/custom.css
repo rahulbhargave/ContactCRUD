@@ -1,0 +1,3 @@
+tbody tr {cursor: pointer;}
+tbody tr#emptyRow {cursor:default;}
+.error, .error:focus {border: 2px dashed red;}
